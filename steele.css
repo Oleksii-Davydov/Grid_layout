@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+}
+.center {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.wrop {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "header"
+                          "menu"
+                          "hero"
+                          "main"
+                          "banner"
+                          "exstra"
+                          "image" ;
+     grid-template-rows: 1fr 1fr 3fr 3fr 2fr 2fr 2fr;
+   /* grid-template-rows: 50px 50px 150px 150px 100px 100px 100px;*/
+    text-align: center;
+}
+
+/*.wrop {
+    display: grid;
+    grid-template-areas: "header"
+                          "menu"
+                          "hero"
+                          "hero"
+                          "hero"
+                          "main"
+                          "main"
+                          "main"
+                          "banner"
+                          "banner"
+                          "exstra"
+                          "exstra"
+                          "image"
+                          "image" ;
+    grid-template-rows: repeat(14, 50px);
+    text-align: center;
+}*/
+
+@media screen and (min-width: 768px) {
+    .wrop {
+    grid-template-areas: "header header header"
+                          "hero hero hero"
+                          "hero hero hero"
+                          "hero hero hero"
+                          "hero hero hero"
+                          "hero hero hero"
+                          "menu main main"
+                          "menu main main"
+                          "menu main main"
+                          "menu main main"
+                          "menu banner banner"
+                          "menu banner banner"
+                          "menu exstra image" 
+                          "menu exstra image"                     
+    ;
+   /* grid-template-rows: repeat(14, 50px);*/
+   grid-template-rows: repeat(14, 1fr);
+    grid-template-columns: 1fr 2fr 1fr;
+
+} 
+}
+
+@media screen and (min-width: 1024px) {
+    .wrop {
+    grid-template-areas: "header menu menu menu"
+                          "hero hero hero hero"
+                          "main main . image"    
+                          "main main . exstra" 
+                          "banner banner banner banner";
+    grid-template-rows: 1fr 7fr 2fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+} 
+}
+
+.headar {
+    grid-area: header;
+    background-color: rgb(3, 3, 108);
+}
+
+.menu {
+    grid-area: menu;
+    background-color: red;
+}
+
+.hero {
+    grid-area: hero;
+    background-color: blue;
+}
+
+.main {
+    grid-area: main;
+    background-color: rgb(2, 2, 113);
+}
+
+.banner {
+    grid-area: banner;
+    background-color: yellow;
+}
+
+.exstra {
+    grid-area: exstra;
+    background-color: rgb(15, 202, 108);
+}
+
+.image {
+    grid-area: image;
+    background-color: rgb(145, 241, 209);
+} 
